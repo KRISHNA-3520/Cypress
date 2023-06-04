@@ -1,0 +1,29 @@
+{
+  "name": "kcypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node_modules\\.bin\\cypress run",
+    "headTest": "npm run test -- --headed",
+    "chromeTest": "npm run test -- --browser chrome",
+    "cloud": "npx cypress run --record --key 0d5da1a6-8207-43ee-9076-a5f314faf311 --spec .\\cypress\\integration\\examples\\Webtable.js --headed --browser chrome",
+    "cloud1": "npx cypress run --record --key 0d5da1a6-8207-43ee-9076-a5f314faf311 --spec .\\cypress\\integration\\examples\\BDD\\ecommerce.feature --headed --browser chrome"
+  },
+  "cypress-cucumber-preprocessor": {
+    "json": {
+      "enabled": true,
+      "output": "cypress/cypresscucumberReports/result.json"
+    }
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "cypress": "^12.13.0",
+    "multiple-cucumber-html-reporter": "^3.4.0"
+  },
+  "dependencies": {
+    "@badeball/cypress-cucumber-preprocessor": "^17.2.1",
+    "@cypress/browserify-preprocessor": "latest"
+  }
+}

@@ -34,3 +34,14 @@ Cypress.Commands.add("selectProduct", (productName) => {
 
 
 })
+Cypress.Commands.add("LoginAPI",()=>{
+    cy.request("POST"
+    ,"https://rahulshettyacademy.com/api/ecom/auth/login"
+    ,{"userEmail":"kjamadar26@gmail.com","userPassword":"Sachin@200"}
+).then(function(response){
+    expect(response.status).to.eq(200)
+    
+    //can be access anywhere in entire project
+    Cypress.env('token',response.body.token)
+})
+})
